@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/local/bin/python3.12 "$PYFILE0"
+python3 $PYFILE0
