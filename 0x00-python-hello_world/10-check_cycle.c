@@ -17,10 +17,8 @@ int check_cycle(listint_t *list)
 		second = second->next->next;
 		if (first == second)
 		{
-			first = NULL, second = NULL;
 			return (1);
 		}
 	}
-	first = NULL, second = NULL;
 	return (0);
 }
