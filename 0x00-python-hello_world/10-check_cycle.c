@@ -11,7 +11,7 @@ int check_cycle(listint_t *list)
 {
 	listint_t *first = list, *second = list;
 
-	while (first && first->next)
+	while (second && second->next)
 	{
 		first = first->next;
 		second = second->next->next;
