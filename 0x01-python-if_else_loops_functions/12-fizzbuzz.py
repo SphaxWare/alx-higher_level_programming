@@ -8,10 +8,7 @@ def fizzbuzz():
             print("Fizz", end=" ")
             continue
         if i % 5 == 0:
-            if i == 100:
-                print("Buzz")
-            else:
-                print("Buzz", end=" ")
+            print("Buzz", end=" ")
             continue
         else:
             print(i, end=" ")
