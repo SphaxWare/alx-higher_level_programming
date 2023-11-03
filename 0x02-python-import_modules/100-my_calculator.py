@@ -1,27 +1,27 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    import sys, calculator_1 as calc
+    import sys
+    import calculator_1 as calc
     args = sys.argv
-    if len(args) < 3:
+    if len(args) < 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
+    a = int(args[1])
+    op = str(args[2])
+    b = int(args[3])
+    if op == "+":
+        print("{:d} + {:d} = {:d}".format(a, b, calc.add(a, b)))
+        exit(0)
+    elif op == "-":
+        print("{:d} - {:d} = {:d}".format(a, b, calc.sub(a, b)))
+        exit(0)
+    elif op == '*':
+        print("{:d} * {:d} = {:d}".format(a, b, calc.mul(a, b)))
+        exit(0)
+    elif op == "/":
+        print("{:d} / {:d} = {:d}".format(a, b, calc.div(a, b)))
+        exit(0)
     else:
-        a = args[1]
-        op = args[2]
-        b = args[3]
-        if op == "+":
-            print("{:d} + {:d} = {:d}".format(int(a), int(b), calc.add(int(a), int(b))))
-            exit(0)
-        elif op == "-":
-            print("{:d} - {:d} = {:d}".format(int(a), int(b), calc.sub(int(a), int(b))))
-            exit(0)
-        elif op == "*":
-            print("{:d} * {:d} = {:d}".format(int(a), int(b), calc.mul(int(a), int(b))))
-            exit(0)
-        elif op == "/":
-            print("{:d} / {:d} = {:d}".format(int(a), int(b), calc.div(int(a), int(b))))
-            exit(0)
-        else:
-            print("Unknown operator. Available operators: +, -, * and /")
-            print(op)
-            exit(1)
+        print("Unknown operator. Available operators: +, -, * and /")
+        print(op)
+        exit(1)
