@@ -1,9 +1,6 @@
 #include <stdio.h>
 #include <Python.h>
-/*
- * print_python_list_info - function
- * p: pyobject
- */
+
 void print_python_list_info(PyObject *p)
 {
 	int size, allocate, loop;
@@ -19,7 +16,7 @@ void print_python_list_info(PyObject *p)
 	{
 		printf("Element %d: ", loop);
 
-		obj = Pylist_GetItem(p, loop);
+		obj = PyList_GetItem(p, loop);
 		printf("%s\n", Py_TYPE(obj)->tp_name);
 	}
 }
