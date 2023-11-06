@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <Python.h>
-
+/**
+ * print_python_list_info - function
+ * @p: pyobject
+ */
 void print_python_list_info(PyObject *p)
 {
 	int size, allocate, loop;
