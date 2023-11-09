@@ -4,7 +4,7 @@ void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 
 /**
- * print_python_list_info - function
+ * print_python_list - function
  * @p: pyobject
  */
 void print_python_list(PyObject *p)
