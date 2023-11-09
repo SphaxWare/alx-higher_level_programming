@@ -23,10 +23,10 @@ void print_python_list(PyObject *p)
 
 	for (loop = 0; loop < size; loop++)
 	{
-		type = list->ob_item[i]->ob_type->tp_name;
-		printf("Element %d: %s\n", i, type);
+		type = list->ob_item[loop]->ob_type->tp_name;
+		printf("Element %d: %s\n", loop, type);
 		if (strcmp(type, "bytes") == 0)
-			print_python_bytes(list->ob_item[i]);
+			print_python_bytes(list->ob_item[loop]);
 	}
 }
 /**
