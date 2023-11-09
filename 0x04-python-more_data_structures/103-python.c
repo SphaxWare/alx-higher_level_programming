@@ -7,7 +7,7 @@ void print_python_bytes(PyObject *p);
  * print_python_list_info - function
  * @p: pyobject
  */
-void print_python_list_info(PyObject *p)
+void print_python_list(PyObject *p)
 {
 	int size, allocate, loop;
 	PyObject *obj;
