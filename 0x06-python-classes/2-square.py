@@ -3,6 +3,7 @@
 
 class Square:
     """Defines an empty square."""
+
     def __init__(self, size=0):
         """Constructor.
 
@@ -13,6 +14,7 @@ class Square:
             TypeError: not int.
             ValueError: size less than 0.
         """
+
         if (type(size) != int):
             raise TypeError("size must be an integer")
         if (0 > size):
