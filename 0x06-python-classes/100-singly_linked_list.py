@@ -26,7 +26,7 @@ class Node:
         Returns:
         int: The data stored in the node.
         """
-        return self.__data
+        return (self.__data)
 
     @data.setter
     def data(self, value):
@@ -82,22 +82,6 @@ class SinglyLinkedList:
         """
         self.__head = None
 
-    def __str__(self):
-        """
-        Returns a string representation of the linked list.
-
-        Returns:
-        str: String representation of the linked list.
-        """
-        result = ""
-        current = self.__head
-        while current:
-            result += str(current.data)
-            current = current.next_node
-            if current:
-                result += "\n"
-        return result
-
     def sorted_insert(self, value):
         """
         Inserts a new node into the correct sorted position in the list.
@@ -115,3 +99,19 @@ class SinglyLinkedList:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
+
+    def __str__(self):
+        """
+        Returns a string representation of the linked list.
+
+        Returns:
+        str: String representation of the linked list.
+        """
+        result = ""
+        current = self.__head
+        while current:
+            result += str(current.data)
+            current = current.next_node
+            if current:
+                result += "\n"
+        return result
