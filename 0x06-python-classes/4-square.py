@@ -16,16 +16,18 @@ class Square:
             ValueError: size less than 0.
         """
         self.__size = size
+
+    @size.setter
+    def set_size(self, size):
+        self.__size = size
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if (0 > size):
             raise ValueError("size must be >= 0")
 
-    def set_size(self, size):
-        self.__size = size
-
-    def get_size(self, size):
-        return self.size
+    @property
+    def get_size(self):
+        return self.__size
 
     def area(self):
         return self.__size ** 2
