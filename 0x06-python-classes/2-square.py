@@ -7,7 +7,7 @@ class Square:
         """Constructor
 
         Args:
-            size: square size
+            size: square size.
 
         Raises:
             TypeError: not int
