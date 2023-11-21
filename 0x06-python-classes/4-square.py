@@ -6,15 +6,6 @@ class Square:
     """Defines a square."""
 
     def __init__(self, size=0):
-        """Constructor.
-
-        Args:
-            size: square size.
-
-        Raises:
-            TypeError: not int.
-            ValueError: size less than 0.
-        """
         self.size = size
 
     @size.setter
