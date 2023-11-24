@@ -31,7 +31,13 @@ Traceback (most recent call last):
 TypeError: a must be an integer
 
 # Test case 7
->>> add_integer(1, 's')
+>>> add_integer()
 Traceback (most recent call last):
     ...
-TypeError: b must be an integer
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+# Test case 8
+>>> add_integer(float('-inf'), 0)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
