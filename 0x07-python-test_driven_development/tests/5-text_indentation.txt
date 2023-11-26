@@ -1,0 +1,22 @@
+# This is a doctest file for text_indentation function
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Test case 1
+>>> text_indentation("test.123?")
+test.
+<BLANKLINE>
+123?
+<BLANKLINE>
+
+# Test case 2
+>>> text_indentation(515)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+
+# Test case 3
+>>> text_indentation()
+Traceback (most recent call last):
+    ...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
