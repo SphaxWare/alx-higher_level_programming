@@ -7,9 +7,18 @@
 
 
 def add_integer(a, b=98):
-    """Return result of the addition of a and b
-    >>> add_integer(1, 2)
-    3"""
+    """the addition of a and b.
+
+    Args:
+        a: integer.
+        b: another integer, default 98.
+
+    Raises:
+        TypeError: if a, b are not int, float.
+
+    Returns:
+        The sum of the two integers.
+    """
     if type(a) not in (int, float):
         raise TypeError("a must be an integer")
     if type(b) not in (int, float):

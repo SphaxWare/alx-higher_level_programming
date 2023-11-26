@@ -1,0 +1,45 @@
+# This is a doctest file for say_my_name function
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Test case 1
+>>> say_my_name("sphax", "ware")
+My name is sphax ware
+
+# Test case 2
+>>> say_my_name("azd")
+My name is azd 
+
+# Test case 3
+>>> say_my_name("AAA", "")
+My name is AAA 
+
+#Test case 4
+>>> say_my_name("", "")
+My name is  
+
+#Test case 5
+>>> say_my_name("   ", "   ")
+My name is        
+
+#Test case 6
+>>> say_my_name("", "itachi")
+My name is  itachi
+
+#Test case 7
+>>> say_my_name(48, "uuu")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
+
+#Test case 8
+>>> say_my_name("ouss", 415)
+Traceback (most recent call last):
+    ...
+TypeError: last_name must be a string
+
+#Test case 9
+>>> say_my_name()
+Traceback (most recent call last):
+    ...
+TypeError: say_my_name() missing 1 required positional argument: 'first_name'
