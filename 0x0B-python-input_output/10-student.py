@@ -15,9 +15,9 @@ class Student:
                 if type(i) is not str:
                     return self.__dict__
         except Exception:
-            return self__dict__
+            return self.__dict__
         obj = dict()
-        for k, v in self.__dict__.itemps():
+        for k, v in self.__dict__.items():
             if k in attrs:
                 obj[k] = v
         return obj
