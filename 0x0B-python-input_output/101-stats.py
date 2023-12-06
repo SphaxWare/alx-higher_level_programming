@@ -25,8 +25,8 @@ def showstats():
 
 
 try:
-    for l in stdin:
-        splitline = l.split()
+    for line in stdin:
+        splitline = line.split()
         if len(splitline) >= 2:
             status = splitline[-2]
             total_size += int(splitline[-1])
