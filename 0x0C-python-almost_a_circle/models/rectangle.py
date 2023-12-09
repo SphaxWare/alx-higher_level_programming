@@ -83,15 +83,17 @@ class Rectangle(Base):
                 f"{self.__width}/{self.__height}"
         )
 
-    def update(self, *args):
-        for i in range(len(args)):
-            if i == 0:
-                self.id = args[i]
-            elif i == 1:
-                self.__width = args[i]
-            elif i == 2:
-                self.__height = args[i]
-            elif i == 3:
-                self.__x = args[i]
-            elif i == 4:
-                self.__y = args[i]
+    def update(self, *args, **kwargs):
+        """Update the attributes"""
+        if args:
+            self.id = args[0] if len(args) >= 1 else self.id
+            self.__width = args[1] if len(args) >= 2 else self.__width
+            self.__height = args[2] if len(args) >= 3 else self.__height
+            self.__x = args[3] if len(args) >= 4 else self.__x
+            self.__y = args[4] if len(args) >= 5 else self.__y
+        elif kwargs:
+            self.id = kwargs.get('id', self.id)
+            self.__width = kwargs.get('width', self.__width)
+            self.__height = kwargs.get('height', self.__height)
+            self.__x = kwargs.get('x', self.__x)
+            self.__y = kwargs.get('y', self.__y)
