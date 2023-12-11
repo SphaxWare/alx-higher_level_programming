@@ -71,10 +71,10 @@ class Base:
         if list_objs is not None:
             if cls is Rectangle:
                 list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
-                            for obj in list_objs]
+                             for obj in list_objs]
             elif cls is Square:
                 list_objs = [[obj.id, obj.size, obj.x, obj.y]
-                            for obj in list_objs]
+                             for obj in list_objs]
         filename = cls.__name__ + ".csv"
         with open(filename, 'w', newline='') as f:
             csvwriter = csv.writer(f)
@@ -93,11 +93,11 @@ class Base:
                 for line in reader:
                     line = [int(n) for n in line]
                     if cls is Rectangle:
-                        dic = {"id": line[0], "width": line[1], "height": line[2],
-                         "x": line[3], "y": line[4]}
+                        dic = {"id": line[0], "width": line[1],
+                               "height": line[2], "x": line[3], "y": line[4]}
                     elif cls is Square:
                         dic = {"id": line[0], "size": line[1],
-                         "x": line[2], "y": line[3]}
+                               "x": line[2], "y": line[3]}
                     objs.append(cls.create(**dic))
             return objs
         except FileNotFoundError:
