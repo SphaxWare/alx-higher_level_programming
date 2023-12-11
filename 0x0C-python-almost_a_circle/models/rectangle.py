@@ -67,6 +67,7 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
+        """display the actual rectangle"""
         for yy in range(self.__y):
             print()
         for i in range(self.__height):
@@ -77,6 +78,7 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """return string representation"""
         return (
                 f"[Rectangle] ({self.id}) "
                 f"{self.__x}/{self.__y} - "
@@ -99,6 +101,7 @@ class Rectangle(Base):
             self.__y = kwargs.get('y', self.__y)
 
     def to_dictionary(self):
+        """return class as a dictionary"""
         return {
             'x': self.x,
             'y': self.y,
