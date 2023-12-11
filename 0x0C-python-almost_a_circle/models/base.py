@@ -107,6 +107,7 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
+        """draw all the shapes in the lists"""
         t = turtle.Turtle()
         rainbow = ["red", "orange", "yellow",
                    "green", "blue", "indigo", "violet"]
