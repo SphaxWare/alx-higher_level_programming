@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """base module"""
 import json
+import csv
 
 
 class Base:
@@ -59,5 +60,45 @@ class Base:
                 data = cls.from_json_string(f.read())
                 instances = [cls.create(**d) for d in data]
                 return instances
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """saves to csv file"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if list_objs is not None:
+            if cls is Rectangle:
+                list_objs = [[obj.id, obj.width, obj.height, obj.x, obj.y]
+                            for obj in list_objs]
+            elif cls is Square:
+                list_objs = [[obj.id, obj.size, obj.x, obj.y]
+                            for obj in list_objs]
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as f:
+            csvwriter = csv.writer(f)
+            csvwriter.writerows(list_objs)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load from a csv file"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        try:
+            filename = cls.__name__ + ".csv"
+            objs = []
+            with open(filename, 'r', newline='') as f:
+                reader = csv.reader(f)
+                for line in reader:
+                    line = [int(n) for n in line]
+                    if cls is Rectangle:
+                        dic = {"id": line[0], "width": line[1], "height": line[2],
+                         "x": line[3], "y": line[4]}
+                    elif cls is Square:
+                        dic = {"id": line[0], "size": line[1],
+                         "x": line[2], "y": line[3]}
+                    objs.append(cls.create(**dic))
+            return objs
         except FileNotFoundError:
             return []
