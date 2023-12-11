@@ -2,6 +2,7 @@
 """base module"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -102,3 +103,36 @@ class Base:
             return objs
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        t = turtle.Turtle()
+        rainbow = ["red", "orange", "yellow",
+                   "green", "blue", "indigo", "violet"]
+        t.penup()
+        t.goto(0, 0)
+        t.pendown()
+        t.speed(100)
+        for shape in instances_rectangles:
+            t.setheading(0)
+            t.penup()
+            t.goto(shape.x, shape.y)
+            t.pendown()
+            t.pencolor(rainbow[random.randint(0, 6)])
+            t.forward(shape.width)
+            t.left(90)
+            t.forward(shape.height)
+            t.left(90)
+            t.forward(shape.width)
+            t.left(90)
+            t.forward(shape.height)
+        for shape in instances_squares:
+            t.setheading(0)
+            t.penup()
+            t.goto(shape.x, shape.y)
+            t.pendown()
+            t.pencolor(rainbow[random.randint(0, 6)])
+            for i in range(4):
+                t.forward(shape.size)
+                t.left(90)
+        turtle.done()
