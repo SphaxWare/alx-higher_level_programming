@@ -113,7 +113,7 @@ class Base:
         t.goto(0, 0)
         t.pendown()
         t.speed(100)
-        for shape in instances_rectangles:
+        for shape in list_rectangles:
             t.setheading(0)
             t.penup()
             t.goto(shape.x, shape.y)
@@ -126,7 +126,7 @@ class Base:
             t.forward(shape.width)
             t.left(90)
             t.forward(shape.height)
-        for shape in instances_squares:
+        for shape in list_squares:
             t.setheading(0)
             t.penup()
             t.goto(shape.x, shape.y)
