@@ -114,6 +114,7 @@ class Base:
         t.goto(0, 0)
         t.pendown()
         t.speed(100)
+        t.pensize(5)
         for shape in list_rectangles:
             t.setheading(0)
             t.penup()
