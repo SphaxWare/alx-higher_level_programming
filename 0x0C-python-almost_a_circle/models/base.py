@@ -20,6 +20,11 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string is None:
+            return []
+        return json.loads(json_string)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -28,3 +33,18 @@ class Base:
             list_objs = [obj.to_dictionary() for obj in list_objs]
         with open(filename, 'w') as f:
             f.write(cls.to_json_string(list_objs))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """instanciate a class from a dict"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls is Rectangle:
+            instance = Rectangle(2, 4)
+        elif cls is Square:
+            instance = Square(2)
+        else:
+            instance = None
+        instance.update(**dictionary)
+        return instance
