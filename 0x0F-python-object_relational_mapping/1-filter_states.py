@@ -14,7 +14,8 @@ if __name__ == '__main__':
                          passwd=MY_PASS,
                          db=MY_DB)
     cur = db.cursor()
-    cur.execute("SELECT * from states WHERE name REGEXP '^[N]';")
+    cur.execute("SELECT * from states WHERE name REGEXP '^[N]'\
+                ORDER BY id;")
     rows = cur.fetchall()
     for row in rows:
         print(row)
