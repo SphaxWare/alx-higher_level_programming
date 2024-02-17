@@ -15,8 +15,8 @@ if __name__ == '__main__':
                          passwd=MY_PASS,
                          db=MY_DB)
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name=%s ORDER BY id;"
-    cur.execute(query, (name,))
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id;".format(name)
+    cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
         print(row)
