@@ -19,4 +19,6 @@ def find_peak(list_of_integers):
         elif m < len(nums) - 1 and nums[m] < nums[m + 1]:
             l = m + 1
         else:
-            return m
+            return nums[m]
+
+    return None
