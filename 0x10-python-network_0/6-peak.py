@@ -4,21 +4,23 @@
 
 def find_peak(list_of_integers):
     """
-    find the peak unt of a list
+    Find the peak element of a list.
     """
     nums = list_of_integers
-    l, r = 0, len(list_of_integers) - 1
+    left, right = 0, len(list_of_integers) - 1
 
+    while left <= right:
+        mid = left + ((right - left) // 2)
 
-    while l <= r:
-        m = l + ((r - l) // 2)
-        # left greater
-        if m > 0 and nums[m] < nums[m - 1]:
-            r = m - 1
-        # right is grater
-        elif m < len(nums) - 1 and nums[m] < nums[m + 1]:
-            l = m + 1
+        # Check if the peak is on the left
+        if mid > 0 and nums[mid] < nums[mid - 1]:
+            right = mid - 1
+        # Check if the peak is on the right
+        elif mid < len(nums) - 1 and nums[mid] < nums[mid + 1]:
+            left = mid + 1
+        # Found the peak
         else:
-            return nums[m]
+            return nums[mid]
 
+    # No peak found
     return None
