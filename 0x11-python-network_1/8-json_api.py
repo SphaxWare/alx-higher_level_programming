@@ -7,9 +7,9 @@ import requests
 import sys
 
 if __name__ == "__main__":
+    """Main Module"""
     url = "http://0.0.0.0:5000/search_user"
-    # Set q to the given letter or an empty string if no argument is given
-    q = sys.argv[1] if len(sys.argv) > 1 else ""
+    q = "" if len(sys.argv) == 1 else sys.argv[1]
     letter = {'q': q}
     try:
         response = requests.post(url, data=letter)
