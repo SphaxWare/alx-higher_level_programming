@@ -4,14 +4,16 @@ const apiUrl = process.argv[2];
 const url = 'https://swapi-api.alx-tools.com/api/people/18/';
 request.get(apiUrl, (error, response, body) => {
   if (error) {
-    return;
+    console.error(error);
   }
-  const films = JSON.parse(body).results;
-  let count = 0;
-  films.forEach(film => {
-    if (film.characters.includes(url)) {
-      count++;
-    }
-  });
-  console.log(count);
+  else {
+    const films = JSON.parse(body).results;
+    let count = 0;
+    films.forEach(film => {
+      if (film.characters.includes(url)) {
+        count++;
+      }
+    });
+    console.log(count);
+  }
 });
